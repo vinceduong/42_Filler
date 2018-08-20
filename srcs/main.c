@@ -6,14 +6,14 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:22:25 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/20 18:02:41 by carmenia         ###   ########.fr       */
+/*   Updated: 2018/08/20 19:05:27 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"../includes/filler.h"
 
 
-int	main(int argc, char **argv)
+int	main()
 {
 	t_player			player;
 	t_map				map;
