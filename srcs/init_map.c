@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 15:29:51 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/20 18:47:35 by vduong           ###   ########.fr       */
+/*   Updated: 2018/08/20 19:09:10 by carmenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ char	**init_map(int height, int width)
 			return (NULL);
 		i++;
 	}
-	printf("prout");
 	return (map);
 }

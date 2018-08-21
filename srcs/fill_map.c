@@ -6,7 +6,7 @@
 /*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:56:58 by carmenia          #+#    #+#             */
-/*   Updated: 2018/08/20 18:49:17 by vduong           ###   ########.fr       */
+/*   Updated: 2018/08/20 19:08:21 by carmenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int		get_map_size(t_map *map)
 	while (ft_isdigit(line[i]))
 		i++;
 	map->width = ft_atoi(&line[i]);
-	printf("%d", map->height);
-	printf("%d", map->width);
 	free(line);
 	return (0);
 }
