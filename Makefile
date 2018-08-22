@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/08/22 15:43:44 by vduong           ###   ########.fr        #
+#    Updated: 2018/08/22 17:57:10 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-NAME = vduong.fillit
+NAME = vduong.filler
 
 LIBFT = libft/libft.a
 
