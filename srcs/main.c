@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:22:25 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/21 15:14:24 by vduong           ###   ########.fr       */
+/*   Updated: 2018/08/22 10:51:01 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main()
 			printf("Coordonee %2d : %2d - %2d\n", i, coor[i][0], coor[i][1]);
 			i++;
 		}
+		break;
 		//sleep(44444000);
 		/*if (write_coor(map, piece, player) == 1)
 			break;
