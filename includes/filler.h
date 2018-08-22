@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:10:36 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/21 12:29:19 by vduong           ###   ########.fr       */
+/*   Updated: 2018/08/22 15:38:01 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ void			free_piece(t_piece *piece);
 void			free_player(t_player *player);
 char			**init_map(int height, int width);
 int				write_coor(t_map map, t_piece piece, t_player player);
-int				**get_coor(t_map map, t_piece piece, char symbol);
+int				**get_valid_coor(t_map map, t_piece piece, char symbol);
+int				compare_coor(int **e_coor, t_piece piece, int *c1, int *c2);
+int				**init_coor(int size);
+int				count_symbol(t_map map, char symbol);
+int				**get_player_coor(t_map map, char symbol);
+int				**sorted_coor(t_map map, t_piece piece, char symbol);
 
 #endif

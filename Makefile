@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/08/21 13:06:54 by vduong           ###   ########.fr        #
+#    Updated: 2018/08/22 15:43:44 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,12 @@ SRC = srcs/main.c\
 	  srcs/fill_piece.c\
 	  srcs/fill_player.c\
 	  srcs/init_map.c\
-	  srcs/get_coor.c\
+	  srcs/init_coor.c\
+	  srcs/get_player_coor.c\
+	  srcs/sorted_coor.c\
+	  srcs/compare_coor.c\
+	  srcs/count_symbol.c\
+	  srcs/get_valid_coor.c\
 
 OBJ = $(SRCS:.c=.o)
 

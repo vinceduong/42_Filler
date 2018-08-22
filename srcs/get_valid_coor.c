@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_coor.c                                         :+:      :+:    :+:   */
+/*   get_valid_coor.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/21 10:52:25 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/21 15:09:09 by vduong           ###   ########.fr       */
+/*   Created: 2018/08/22 11:31:11 by vduong            #+#    #+#             */
+/*   Updated: 2018/08/22 12:15:37 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,48 +59,19 @@ int		count_placable_coor(t_map map, t_piece piece, char symbol)
 		}
 		i++;
 	}
-	ft_putstr("okcount\n");
-	printf ("count = %d\n", count);
 	return (count);
 }
 
-int		**init_coor(int nb)
-{
-	int	**coor;
-	int	i;
-
-	if (!(coor = (int **)malloc(sizeof(int *) * (nb + 2))))
-		return (NULL);
-	coor[0] = (int *)malloc(sizeof(int *));
-	coor[0][0] = nb;
-	coor[nb + 1] = NULL;
-	if (nb >= 1)
-	{
-		i = 1;
-		while (i < nb + 1)
-		{
-			if (!(coor[i] = (int *)malloc(sizeof(int) * 2)))
-				return (NULL);
-			printf("OK\n");
-			i++;
-		}
-	}
-	return (coor);
-}
-
-int		**get_coor(t_map map, t_piece piece, char symbol)
+int		**get_valid_coor(t_map map, t_piece piece, char symbol)
 {
 	int		**coor;
 	int		i;
 	int		j;
 	int		nb;
 
-	ft_putstr("ok1\n");
 	if (!(coor = init_coor(count_placable_coor(map, piece, symbol))))
 		return (NULL);
-	ft_putstr("ok2\n");
 	nb = 1;
-	printf("height  = %d\n", map.height);
 	i = 0;
 	while (i < map.height)
 	{
@@ -109,16 +80,13 @@ int		**get_coor(t_map map, t_piece piece, char symbol)
 		{
 			if (is_placable(map, piece, symbol, i, j))
 			{
-				printf("is placable, nb = %d\n", nb);
 				coor[nb][0] = i;
 				coor[nb][1] = j;
-				ft_putstr("ok3\n");
 				nb++;
 			}
 			j++;
 		}
 		i++;
 	}
-	ft_putstr("ok3\n");
 	return (coor);
 }

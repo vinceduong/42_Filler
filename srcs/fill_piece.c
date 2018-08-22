@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:41:53 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/22 10:51:49 by vduong           ###   ########.fr       */
+/*   Updated: 2018/08/22 16:39:15 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int		fill_piece(t_piece *piece)
 	char	*line;
 	int		i;
 
-	get_next_line(0, &line);
+	if (get_next_line(0, &line) < 0)
+		return(1);
 	fill_metadata(piece, line);
 	if (!(piece->content = init_map(piece->height, piece->width)))
 		return (1);

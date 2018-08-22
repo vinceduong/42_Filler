@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:22:25 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/22 10:51:01 by vduong           ###   ########.fr       */
+/*   Updated: 2018/08/22 16:38:16 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	main()
 	t_map				map;
 	t_piece				piece;
 	char				*firstline;
-
 	int					**coor;
+
 	get_next_line(0, &firstline);
 	if (strstr(firstline, "$$$"))
 		fill_player(&player, firstline);
@@ -30,9 +30,10 @@ int	main()
 			break;
 		if (fill_piece(&piece) == 1)
 			break;
-		coor = get_coor(map, piece, player.symbol);
-		int i;
-		i = 1;
+		coor = sorted_coor(map, piece, player.symbol);
+		printf("%d %d\n", coor[1][0], coor[1][1]);
+		//coor = get_valid_coor(map, piece, player.symbol);
+		/*i = 1;
 		printf("Il y a %d coordonnees possibles : \n", coor[0][0]);
 		while (i < coor[0][0] + 1)
 		{
@@ -41,7 +42,7 @@ int	main()
 		}
 		break;
 		//sleep(44444000);
-		/*if (write_coor(map, piece, player) == 1)
+		if (write_coor(map, piece, player) == 1)
 			break;
 		free_map(&map);
 		free_piece(&piece);*/
