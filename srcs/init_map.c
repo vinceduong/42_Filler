@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 15:29:51 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/20 19:09:10 by carmenia         ###   ########.fr       */
+/*   Updated: 2018/08/21 15:14:06 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ char	**init_map(int height, int width)
 	int		i;
 	char	**map;
 
-	if (!(map = (char **)(malloc(sizeof(char*) * (height + 3)))))
+	if (!(map = (char **)(malloc(sizeof(char*) * (height + 1)))))
 		return (NULL);
 	map[height] = NULL;
 	i = 0;
 	while (i < height)
 	{
-		if (!(map[i] = (char *)malloc(sizeof(char) * (width + 1))))
+		if (!(map[i] = ft_strnew(width)))
 			return (NULL);
 		i++;
 	}

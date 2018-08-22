@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:10:36 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/20 18:48:54 by vduong           ###   ########.fr       */
+/*   Updated: 2018/08/21 12:29:19 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ typedef	struct	s_player
 int				fill_map(t_map *map);
 int				fill_piece(t_piece *piece);
 int				fill_player(t_player *player, char *firstline);
-int				free_map(t_map *map);
-int				free_piece(t_piece *piece);
+void			free_map(t_map *map);
+void			free_piece(t_piece *piece);
+void			free_player(t_player *player);
 char			**init_map(int height, int width);
+int				write_coor(t_map map, t_piece piece, t_player player);
+int				**get_coor(t_map map, t_piece piece, char symbol);
+
 #endif

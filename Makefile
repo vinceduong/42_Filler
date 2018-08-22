@@ -6,13 +6,13 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/08/20 19:07:43 by vduong           ###   ########.fr        #
+#    Updated: 2018/08/21 13:06:54 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all clean fclean re
 
-CC = GCC
+CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -26,14 +26,17 @@ SRC = srcs/main.c\
 	  srcs/fill_piece.c\
 	  srcs/fill_player.c\
 	  srcs/init_map.c\
+	  srcs/get_coor.c\
 
 OBJ = $(SRCS:.c=.o)
 
 all : $(NAME)
 
-$(NAME) :
-	make -C libft
+$(NAME) : $(SRC) $(LIBFT)
 	$(CC) $(FLAGS) $(SRC) $(LIBFT) -o $(NAME)
+
+$(LIBFT) :
+	make -C libft
 
 clean :
 	make clean -C libft

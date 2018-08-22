@@ -6,7 +6,7 @@
 /*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:56:58 by carmenia          #+#    #+#             */
-/*   Updated: 2018/08/20 19:08:21 by carmenia         ###   ########.fr       */
+/*   Updated: 2018/08/22 10:24:46 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ int		get_map_content(t_map *map)
 	free(line);
 	while (i < map->height)
 	{
-		if(get_next_line(0, &(map->content[i]) ) < 0)
+		if(get_next_line(0, &(map->content[i])) < 0)
 			return (1);
 		map->content[i]= map->content[i] + 4;
 		i++;
 	}
-	free(line);
 	return (0);
 }
 
