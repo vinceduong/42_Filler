@@ -31,8 +31,8 @@ int		**get_player_coor(t_map map, char symbol)
 		{
 			if (MCONTENT == symbol || MCONTENT == symbol + ('a' - 'A'))
 			{
-				coor[nb][0] = j;
-				coor[nb][1] = i;
+				coor[nb][0] = i;
+				coor[nb][1] = j;
 			}
 			j++;
 		}

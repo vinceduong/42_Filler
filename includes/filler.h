@@ -22,6 +22,7 @@ typedef	struct	 s_piece
 	int		height;
 	int		width;
 	char	**content;
+	int		enemy_distance;
 }				t_piece;
 
 typedef	struct	s_map
@@ -48,7 +49,7 @@ void			free_player(t_player *player);
 char			**init_map(int height, int width);
 int				write_coor(t_map map, t_piece piece, t_player player);
 int				**get_valid_coor(t_map map, t_piece piece, char symbol);
-int				compare_coor(int **e_coor, t_piece piece, int *c1, int *c2);
+int				compare_coor(t_map m, t_piece p, int **e_c, int *c1, int *c2);
 int				**init_coor(int size);
 int				count_symbol(t_map map, char symbol);
 int				**get_player_coor(t_map map, char symbol);

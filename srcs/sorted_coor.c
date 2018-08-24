@@ -19,15 +19,16 @@ int **sorted_coor(t_map map, t_piece piece, char symbol)
 	int *tmp;
 	int	i;
 
-	if (!(v_coor = get_valid_coor(map, piece, symbol)))
+	if (!(v_coor = get_valid_coor(map, piece, symbol)) || !v_coor[0][0])
 		return (NULL);
 	if (!(e_coor = get_player_coor(map, symbol == 'O' ? 'X' : 'O')))
 		return (NULL);
 	i = 1;
 	while (i < v_coor[0][0])
 	{
-		if (!compare_coor(e_coor, piece, v_coor[i], v_coor[i + 1]))
+		if (!compare_coor(map, piece, e_coor, v_coor[i], v_coor[i + 1]))
 		{
+			//printf("sorted\n");
 			tmp = v_coor[i];
 			v_coor[i] = v_coor[i + 1];
 			v_coor[i + 1] = tmp;
