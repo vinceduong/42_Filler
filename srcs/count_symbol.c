@@ -26,8 +26,11 @@ int	count_symbol(t_map map, char symbol)
 		j = 0;
 		while (j < map.width)
 		{
-			if (MCONTENT == symbol || MCONTENT == symbol + ('a' - 'A'))
+			if (MCONTENT == symbol || MCONTENT == (symbol == 'O' ? 'o' : 'x'))
+			{
+				//printf("i = %d, j = %d\n", i, j);
 				count++;
+			}
 			j++;
 		}
 		i++;

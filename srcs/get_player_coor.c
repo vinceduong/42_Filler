@@ -29,10 +29,12 @@ int		**get_player_coor(t_map map, char symbol)
 		j = 0;
 		while (j < map.width)
 		{
-			if (MCONTENT == symbol || MCONTENT == symbol + ('a' - 'A'))
+			if (MCONTENT == symbol || MCONTENT == (symbol == 'O' ? 'o' : 'x'))
 			{
 				coor[nb][0] = i;
 				coor[nb][1] = j;
+				//printf("i = %d, j = %d\n", coor[nb][0], coor[nb][1]);
+				nb++;
 			}
 			j++;
 		}

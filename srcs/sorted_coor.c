@@ -26,7 +26,7 @@ int **sorted_coor(t_map map, t_piece piece, char symbol)
 	i = 1;
 	while (i < v_coor[0][0])
 	{
-		if (!compare_coor(map, piece, e_coor, v_coor[i], v_coor[i + 1]))
+		if (compare_coor(map, piece, e_coor, v_coor[i], v_coor[i + 1]))
 		{
 			//printf("sorted\n");
 			tmp = v_coor[i];
@@ -34,7 +34,8 @@ int **sorted_coor(t_map map, t_piece piece, char symbol)
 			v_coor[i + 1] = tmp;
 			i = 1;
 		}
-		i++;
+		else
+			i++;
 	}
 	return (v_coor);
 }
