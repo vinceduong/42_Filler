@@ -73,5 +73,10 @@ int		enemy_distance(t_map map, t_piece piece, int **en_c, int *c)
 
 int		compare_coor(t_map map, t_piece piece, int **en_c, int *c1, int *c2)
 {
-	return (enemy_distance(map, piece, en_c, c1) > enemy_distance(map, piece, en_c, c2));
+	int dist1;
+	int dist2;
+
+	dist1 = enemy_distance(map, piece, en_c, c1);
+	dist2 = enemy_distance(map, piece, en_c, c2);
+	return (dist1 > dist2);
 }
