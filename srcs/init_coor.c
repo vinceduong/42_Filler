@@ -6,13 +6,13 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 12:14:08 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/22 16:00:36 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/04 13:04:09 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
-int		**init_coor(int nb)
+int		**init_coor(int nb, int distance)
 {
 	int	**coor;
 	int	i;
@@ -27,7 +27,7 @@ int		**init_coor(int nb)
 		i = 1;
 		while (i < nb + 1)
 		{
-			if (!(coor[i] = (int *)malloc(sizeof(int) * 2)))
+			if (!(coor[i] = (int *)malloc(sizeof(int) * (2 + distance))))
 				return (NULL);
 			i++;
 		}

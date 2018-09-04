@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 11:31:11 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/22 12:15:37 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/04 13:27:31 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		**get_valid_coor(t_map map, t_piece piece, char symbol)
 	int		j;
 	int		nb;
 
-	if (!(coor = init_coor(count_placable_coor(map, piece, symbol))))
+	if (!(coor = init_coor(count_placable_coor(map, piece, symbol), 2)))
 		return (NULL);
 	nb = 1;
 	i = 0;

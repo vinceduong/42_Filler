@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/08/22 17:57:10 by vduong           ###   ########.fr        #
+#    Updated: 2018/09/04 14:21:38 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ SRC = srcs/main.c\
 	  srcs/compare_coor.c\
 	  srcs/count_symbol.c\
 	  srcs/get_valid_coor.c\
+	  srcs/enemy_distance.c\
+	  srcs/border_distance.c\
 
 OBJ = $(SRCS:.c=.o)
 

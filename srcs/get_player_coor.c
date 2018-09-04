@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 12:04:43 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/22 16:00:07 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/04 13:07:29 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int		**get_player_coor(t_map map, char symbol)
 	int	i;
 	int	j;
 	int nb;
-
-	if (!(coor = init_coor(count_symbol(map, symbol))))
+	if (!(coor = init_coor(count_symbol(map, symbol), 0)))
 		return (NULL);
 	nb = 1;
 	i = 0;
