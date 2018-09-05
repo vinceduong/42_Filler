@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:10:36 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/04 16:02:00 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/05 14:12:04 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ int				count_symbol(t_map map, char symbol);
 int				**get_player_coor(t_map map, char symbol);
 int				**sorted_coor(t_map map, t_piece piece, char symbol);
 int				enemy_distance(t_map map, t_piece piece, int **en_c, int *c);
-int				border_distance(t_map map, t_piece piece, int *c);
+int				*border_distance(t_map m, t_piece p, int **ec, int *c);
 
 #endif

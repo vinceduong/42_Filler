@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 15:38:39 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/04 15:10:46 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/05 14:36:16 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ int **sorted_coor(t_map map, t_piece piece, char symbol)
 	while (i <= v_coor[0][0])
 	{
 		v_coor[i][2] = enemy_distance(map, piece, e_coor, v_coor[i]);
-		v_coor[i][3] = border_distance(map, piece, v_coor[i]);
+		tmp = border_distance(map, piece, e_coor, v_coor[i]);
+		/*printf("tmp[0] = %d\n", tmp[0]);
+		printf("tmp[1] = %d\n", tmp[1]);*/
+		v_coor[i][3] = tmp[0];
+		v_coor[i][4] = tmp[1];
 		//printf("i = %d, j = %d, distance = %d\n", v_coor[i][0], v_coor[i][1], v_coor[i][3]);
 		i++;
 	}
