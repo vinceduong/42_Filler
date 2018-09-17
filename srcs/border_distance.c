@@ -6,16 +6,16 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 11:08:05 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/07 14:34:43 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 16:50:42 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "filler.h"
 
-#define PCONTENT piece.content[i][j]
-#define	MCONTENT	map.content[i][j]
-#define I       en_c[i][0]
-#define J       en_c[i][1]
+#define PCONTENT	piece.content[i][j]
+#define MCONTENT	map.content[i][j]
+#define I			en_c[i][0]
+#define J			en_c[i][1]
 
 int		*enemy_borders(t_map map, int **en_c)
 {
@@ -55,8 +55,6 @@ int		*border_distance(t_map map, t_piece piece, int **en_c, int *c)
 
 	e_borders = enemy_borders(map, en_c);
 	dist = (int *)malloc(sizeof(int) * 2);
-	/*printf("e_borders[0] = %d\n", e_borders[0]);
-	printf("e_borders[1] = %d\n", e_borders[1]);*/
 	i = 0;
 	dist[0] = 100000;
 	dist[1] = 100000;

@@ -6,11 +6,11 @@
 /*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:56:58 by carmenia          #+#    #+#             */
-/*   Updated: 2018/08/22 16:36:29 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 15:42:14 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../includes/filler.h"
+#include	"filler.h"
 
 int		get_map_size(t_map *map)
 {

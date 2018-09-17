@@ -6,11 +6,11 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 12:04:43 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/04 13:07:29 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 16:01:14 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "filler.h"
 #define	MCONTENT	map.content[i][j]
 
 int		**get_player_coor(t_map map, char symbol)

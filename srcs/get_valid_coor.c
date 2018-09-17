@@ -6,11 +6,11 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 11:31:11 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/05 14:00:32 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 16:01:37 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "filler.h"
 
 #define  PCONTENT piece.content[y][x]
 #define  MCONTENT map.content[i + y][j + x]

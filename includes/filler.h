@@ -6,14 +6,14 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:10:36 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/07 14:45:56 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 16:49:20 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLER_H
 # define FILLER_H
 
-#include	"../libft/libft.h"
+#include	"libft.h"
 #include	"get_next_line.h"
 #include <stdio.h>
 
@@ -49,7 +49,7 @@ void			free_player(t_player *player);
 char			**init_map(int height, int width);
 int				write_coor(t_map map, t_piece piece, t_player player);
 int				**get_valid_coor(t_map map, t_piece piece, char symbol);
-int				compare_coor(t_map map, int *c1, int *c2);
+int				compare_coor(int *c1, int *c2);
 int				**init_coor(int size, int distance);
 int				count_symbol(t_map map, char symbol);
 int				**get_player_coor(t_map map, char symbol);

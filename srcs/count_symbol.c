@@ -6,12 +6,12 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 12:18:25 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/22 15:52:00 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 16:41:13 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
-#define	MCONTENT	map.content[i][j]
+#include "filler.h"
+#define MCONTENT	map.content[i][j]
 
 int	count_symbol(t_map map, char symbol)
 {
@@ -27,10 +27,7 @@ int	count_symbol(t_map map, char symbol)
 		while (j < map.width)
 		{
 			if (MCONTENT == symbol || MCONTENT == (symbol == 'O' ? 'o' : 'x'))
-			{
-				//printf("i = %d, j = %d\n", i, j);
 				count++;
-			}
 			j++;
 		}
 		i++;

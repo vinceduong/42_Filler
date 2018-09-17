@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/09/04 14:21:38 by vduong           ###   ########.fr        #
+#    Updated: 2018/09/17 16:29:08 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
 NAME = vduong.filler
+
+INCLUDES = ./includes/filler.h\
+		   ./includes/get_next_line.h\
+		   ./libft/libft.h\
 
 LIBFT = libft/libft.a
 
@@ -39,8 +43,8 @@ OBJ = $(SRCS:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(SRC) $(LIBFT)
-	$(CC) $(FLAGS) $(SRC) $(LIBFT) -o $(NAME)
+$(NAME) : $(INCLUDES) $(SRC) $(LIBFT)
+	$(CC) $(FLAGS) -I libft/ -I includes/ $(SRC) $(LIBFT) -o $(NAME)
 
 $(LIBFT) :
 	make -C libft

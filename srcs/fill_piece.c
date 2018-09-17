@@ -6,11 +6,11 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:41:53 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/22 17:38:36 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 15:42:34 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "filler.h"
 
 void	fill_metadata(t_piece *piece, char *line)
 {

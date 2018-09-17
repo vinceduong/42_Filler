@@ -6,12 +6,18 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:22:25 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/12 08:27:47 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/17 16:28:36 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../includes/filler.h"
+#include	"filler.h"
 
+void print_coor(int c1, int c2){
+	ft_putnbr(c1);
+	ft_putchar(' ');
+	ft_putnbr(c2);
+	ft_putchar('\n');
+}
 
 int	main()
 {
@@ -29,19 +35,13 @@ int	main()
 	{
 		if (fill_map(&map) == 1)
 			break;
-		//int i = 0;
-		/*while (map.content[i])
-		{
-			printf("%s\n", map.content[i]);
-			i++;
-		}*/
 		if (fill_piece(&piece) == 1)
 			break;
 		coor = sorted_coor(map, piece, player.symbol);
 		if (coor)
-			dprintf(1, "%d %d\n", coor[1][0], coor[1][1]);
+			print_coor(coor[1][0], coor[1][1]);
 		else
-			dprintf(1, "0 0\n");
+			print_coor(0, 0);
 		
 	}
 	return (0);

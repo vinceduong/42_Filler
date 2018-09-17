@@ -6,11 +6,11 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 14:09:34 by vduong            #+#    #+#             */
-/*   Updated: 2018/08/20 16:34:49 by carmenia         ###   ########.fr       */
+/*   Updated: 2018/09/17 15:42:54 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "filler.h"
 
 int	fill_player(t_player *player, char *firstline)
 {
