@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 15:38:39 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/05 14:36:16 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/07 14:44:40 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int **sorted_coor(t_map map, t_piece piece, char symbol)
 	i = 1;
 	while (i < v_coor[0][0])
 	{
-		if (compare_coor(v_coor[i], v_coor[i + 1]))
+		if (compare_coor(map, v_coor[i], v_coor[i + 1]))
 		{
 			//printf("sorted\n");
 			tmp = v_coor[i];
