@@ -12,6 +12,10 @@
 
 NAME = libft.a
 
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror
+
 SRC = ./ft_atoi.c\
 	  ./ft_bzero.c\
 	  ./ft_isalnum.c\
@@ -81,18 +85,17 @@ SRC = ./ft_atoi.c\
 	  ./ft_min.c \
 	  ./ft_max.c \
 
-INC = ./libft.h
 
 OBJ = $(SRC:.c=.o)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC) $(INC)
+	$(CC) -c $(FLAGS) $(SRC) -I./includes
 	ar r $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 all : $(NAME)
 
-clean : 
+clean :
 	/bin/rm -rf $(OBJ)
 
 fclean :clean
