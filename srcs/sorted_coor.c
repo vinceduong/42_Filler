@@ -12,7 +12,7 @@
 
 #include "filler.h"
 
-int	**sort_coor(int **v_coor)
+int	*sort_coor(int **v_coor)
 {
 	int i;
 	int *tmp;
@@ -30,10 +30,10 @@ int	**sort_coor(int **v_coor)
 		else
 			i++;
 	}
-	return (v_coor);
+	return (v_coor[1]);
 }
 
-int	**sorted_coor(t_map map, t_piece piece, char symbol)
+int	*sorted_coor(t_map map, t_piece piece, char symbol)
 {
 	int **v_coor;
 	int **e_coor;

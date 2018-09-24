@@ -29,7 +29,9 @@ int		fill_piece(t_piece *piece)
 	int		i;
 
 	get_next_line(0, &line);
+	free(line);
 	fill_metadata(piece, line);
+	free(line);
 	if (!(piece->content = init_map(piece->height, piece->width)))
 		return (1);
 	i = 0;
