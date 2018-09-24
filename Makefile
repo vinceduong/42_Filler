@@ -18,9 +18,6 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = vduong.filler
 
-INCLUDES = ./includes/filler.h\
-		   ./includes/get_next_line.h\
-		   ./libft/includes/libft.h\
 
 LIBFT = libft/libft.a
 
@@ -43,7 +40,7 @@ OBJ = $(SRCS:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(INCLUDES) $(SRC) $(LIBFT)
+$(NAME) : $(SRC) $(LIBFT)
 	$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
 
 $(LIBFT) :
