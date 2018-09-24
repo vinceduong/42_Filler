@@ -18,7 +18,6 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = vduong.filler
 
-
 LIBFT = visualisateur/libft/libft.a
 
 SRC = srcs/main.c\
