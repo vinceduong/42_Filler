@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/09/24 14:59:06 by carmenia         ###   ########.fr        #
+#    Updated: 2018/09/24 15:02:55 by carmenia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,15 +48,12 @@ $(NAME) : $(INCLUDES) $(SRC) $(LIBFT)
 
 $(LIBFT) :
 	make -C libft
-	make -C visualisateur
 
 clean :
-	make clean-C visualisateur
 	make clean -C libft
 	rm -f $(OBJ)
 
 fclean :
-	make fclean -C visualisateur
 	make fclean -C libft
 	rm -f $(NAME)
 
