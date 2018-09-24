@@ -55,6 +55,5 @@ int				count_symbol(t_map map, char symbol);
 int				**get_player_coor(t_map map, char symbol);
 int				**sorted_coor(t_map map, t_piece piece, char symbol);
 int				enemy_distance(t_map map, t_piece piece, int **en_c, int *c);
-int				*border_distance(t_map m, t_piece p, int **ec, int *c);
 
 #endif

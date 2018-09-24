@@ -33,7 +33,6 @@ SRC = srcs/main.c\
 	  srcs/count_symbol.c\
 	  srcs/get_valid_coor.c\
 	  srcs/enemy_distance.c\
-	  srcs/border_distance.c\
 
 OBJ = $(SRCS:.c=.o)
 
