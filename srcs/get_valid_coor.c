@@ -12,10 +12,10 @@
 
 #include "filler.h"
 
-#define  PCONTENT piece.content[y][x]
-#define  MCONTENT map.content[i + y][j + x]
+#define PCONTENT	piece.content[y][x]
+#define MCONTENT	map.content[coor[0] + y][coor[1] + x]
 
-int		is_placable(t_map map, t_piece piece, char symbol, int i, int j)
+int		is_placable(t_map map, t_piece piece, char symbol, int *coor)
 {
 	int	nbover;
 	int	x;
@@ -28,7 +28,8 @@ int		is_placable(t_map map, t_piece piece, char symbol, int i, int j)
 		x = 0;
 		while (x < piece.width)
 		{
-			if (PCONTENT == '*' && ((i + y >= map.height) || j + x >= map.width))
+			if (PCONTENT == '*' &&
+				((coor[0] + y >= map.height) || coor[1] + x >= map.width))
 				return (0);
 			if (PCONTENT == '*' && MCONTENT == symbol)
 				nbover++;
@@ -46,15 +47,19 @@ int		count_placable_coor(t_map map, t_piece piece, char symbol)
 	int		i;
 	int		j;
 	int		count;
+	int		*coor;
 
 	i = 0;
 	count = 0;
+	coor = (int *)malloc(2 * sizeof(int));
 	while (i < map.height)
 	{
 		j = 0;
 		while (j < map.width)
 		{
-			count += is_placable(map, piece, symbol, i, j);
+			coor[0] = i;
+			coor[1] = j;
+			count += is_placable(map, piece, symbol, coor);
 			j++;
 		}
 		i++;
@@ -62,31 +67,40 @@ int		count_placable_coor(t_map map, t_piece piece, char symbol)
 	return (count);
 }
 
-int		**get_valid_coor(t_map map, t_piece piece, char symbol)
+int		**fill_valid_coor(t_map map, t_piece piece, char symbol, int **vc)
 {
-	int		**coor;
 	int		i;
 	int		j;
 	int		nb;
+	int		*c;
 
-	if (!(coor = init_coor(count_placable_coor(map, piece, symbol), 3)))
-		return (NULL);
 	nb = 1;
-	i = 0;
-	while (i < map.height)
+	i = -1;
+	c = (int *)malloc(2 * sizeof(int));
+	while (i++ < map.height)
 	{
 		j = 0;
 		while (j < map.width)
 		{
-			if (is_placable(map, piece, symbol, i, j))
+			c[0] = i;
+			c[1] = j;
+			if (is_placable(map, piece, symbol, c))
 			{
-				coor[nb][0] = i;
-				coor[nb][1] = j;
+				vc[nb][0] = i;
+				vc[nb][1] = j;
 				nb++;
 			}
 			j++;
 		}
-		i++;
 	}
-	return (coor);
+	return (vc);
+}
+
+int		**get_valid_coor(t_map map, t_piece piece, char symbol)
+{
+	int		**coor;
+
+	if (!(coor = init_coor(count_placable_coor(map, piece, symbol), 1)))
+		return (NULL);
+	return (coor = fill_valid_coor(map, piece, symbol, coor));
 }

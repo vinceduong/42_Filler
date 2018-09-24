@@ -10,39 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"filler.h"
+#include "filler.h"
 
-void print_coor(int c1, int c2){
+void				print_coor(int c1, int c2)
+{
 	ft_putnbr(c1);
 	ft_putchar(' ');
 	ft_putnbr(c2);
 	ft_putchar('\n');
 }
 
-int	main()
+int					main(void)
 {
 	t_player	player;
-	t_map		map;
+	t_map			map;
 	t_piece		piece;
-	char		*line;
-	int			**coor;
+	char			*line;
+	int				**coor;
 
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
-			            !ft_strncmp(line, "$$$ exec p", 9) &&
-						            (line[10] == '1' || line[10] == '2'))
+			!ft_strncmp(line, "$$$ exec p", 9) &&
+			(line[10] == '1' || line[10] == '2'))
 		fill_player(&player, line);
 	while (1)
 	{
 		if (fill_map(&map) == 1)
-			break;
+			break ;
 		if (fill_piece(&piece) == 1)
-			break;
+			break ;
 		coor = sorted_coor(map, piece, player.symbol);
 		if (coor)
 			print_coor(coor[1][0], coor[1][1]);
 		else
 			print_coor(0, 0);
-		
 	}
 	return (0);
 }

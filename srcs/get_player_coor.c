@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "filler.h"
-#define	MCONTENT	map.content[i][j]
+#define MCONTENT	map.content[i][j]
 
 int		**get_player_coor(t_map map, char symbol)
 {
@@ -19,6 +19,7 @@ int		**get_player_coor(t_map map, char symbol)
 	int	i;
 	int	j;
 	int nb;
+
 	if (!(coor = init_coor(count_symbol(map, symbol), 0)))
 		return (NULL);
 	nb = 1;
@@ -32,7 +33,6 @@ int		**get_player_coor(t_map map, char symbol)
 			{
 				coor[nb][0] = i;
 				coor[nb][1] = j;
-				//printf("i = %d, j = %d\n", coor[nb][0], coor[nb][1]);
 				nb++;
 			}
 			j++;

@@ -20,9 +20,9 @@ int		abs(int n)
 	return (n < 0 ? -n : n);
 }
 
-int		distance(int c1, int c2, int C1, int C2)
+int		distance(int c1, int c2, int j1, int j2)
 {
-	return (abs(c1 - C1) + abs(c2 - C2));
+	return (abs(c1 - j1) + abs(c2 - j2));
 }
 
 int		coor_distance(t_map map, t_piece piece, int *en_c, int *c)
