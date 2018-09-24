@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/09/24 15:18:03 by carmenia         ###   ########.fr        #
+#    Updated: 2018/09/24 15:20:57 by carmenia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,6 @@ OBJ = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(INCLUDES) $(SRC) $(LIBFT)
-	$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
-$(NAME) : $(SRC) $(LIBFT)
 	$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
 
 $(LIBFT) :
