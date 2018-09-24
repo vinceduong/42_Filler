@@ -35,8 +35,10 @@ int		fill_piece(t_piece *piece)
 	i = 0;
 	while (i < piece->height)
 	{
-		if (get_next_line(0, &piece->content[i]) <= 0)
+		if (get_next_line(0, &line) <= 0)
 			return (1);
+		ft_strcpy(piece->content[i], line);
+		free(line);
 		i++;
 	}
 	return (0);

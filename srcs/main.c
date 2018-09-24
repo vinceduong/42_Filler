@@ -34,15 +34,20 @@ int					main(void)
 		fill_player(&player, line);
 	while (1)
 	{
-		if (fill_map(&map) == 1)
-			break ;
-		if (fill_piece(&piece) == 1)
-			break ;
-		coor = sorted_coor(map, piece, player.symbol);
-		if (coor)
-			print_coor(coor[1][0], coor[1][1]);
+		if (!fill_map(&map) && !fill_piece(&piece))
+		{
+			coor = sorted_coor(map, piece, player.symbol);
+			if (coor)
+				print_coor(coor[1][0], coor[1][1]);
+			else
+				print_coor(0, 0);
+			free_all(&map, &piece, coor);
+		}
 		else
-			print_coor(0, 0);
+		{
+			free(line);
+			break ;
+		}
 	}
 	return (0);
 }

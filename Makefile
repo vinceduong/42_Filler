@@ -14,7 +14,7 @@
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = 
 
 NAME = vduong.filler
 
@@ -33,6 +33,7 @@ SRC = srcs/main.c\
 	  srcs/count_symbol.c\
 	  srcs/get_valid_coor.c\
 	  srcs/enemy_distance.c\
+		srcs/free_all.c\
 
 OBJ = $(SRCS:.c=.o)
 

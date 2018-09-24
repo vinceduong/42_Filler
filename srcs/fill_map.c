@@ -39,9 +39,10 @@ int		get_map_content(t_map *map)
 		return (1);
 	while (i < map->height)
 	{
-		if (get_next_line(0, &(map->content[i])) < 0)
+		if (get_next_line(0, &line) <= 0)
 			return (1);
-		map->content[i] = map->content[i] + 4;
+		ft_strcpy(map->content[i], line + 4);
+		free(line);
 		i++;
 	}
 	return (0);

@@ -43,9 +43,7 @@ typedef	struct	s_player
 int				fill_map(t_map *map);
 int				fill_piece(t_piece *piece);
 int				fill_player(t_player *player, char *firstline);
-void			free_map(t_map *map);
-void			free_piece(t_piece *piece);
-void			free_player(t_player *player);
+void			free_all(t_map *m, t_piece *p, int **c);
 char			**init_map(int height, int width);
 int				write_coor(t_map map, t_piece piece, t_player player);
 int				**get_valid_coor(t_map map, t_piece piece, char symbol);
