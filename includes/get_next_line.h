@@ -6,7 +6,7 @@
 /*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 15:58:04 by carmenia          #+#    #+#             */
-/*   Updated: 2018/08/20 12:58:23 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/24 14:56:19 by carmenia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # define BUFF_SIZE 8
-# include "../libft/libft.h"
+# include "libft.h"
 
 typedef struct	s_file
 {
