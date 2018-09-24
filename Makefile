@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/09/24 15:22:13 by carmenia         ###   ########.fr        #
+#    Updated: 2018/09/24 15:23:57 by carmenia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ $(LIBFT) :
 	@make -C visualisateur
 
 clean :
-	@make clean -C visualisateur 
+	@make clean -C visualisateur
 	@rm -f $(OBJ)
 
 fclean :

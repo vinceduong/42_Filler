@@ -25,11 +25,35 @@ int		distance(int c1, int c2, int C1, int C2)
 	return (abs(c1 - C1) + abs(c2 - C2));
 }
 
+int		coor_distance(t_map map, t_piece piece, int *en_c, int *c)
+{
+	int i;
+	int j;
+	int	dist;
+	int tmp;
+
+	dist = -1;
+	i = 0;
+	while (i < piece.height)
+	{
+		j = 0;
+		while (j < piece.width)
+		{
+			if (PCONTENT == '*' && map.content[c[0] + i][c[1] + j] == '.')
+			{
+				tmp = distance(en_c[0], en_c[1], c[0], c[1]);
+				dist = tmp < dist || dist == -1 ? tmp : dist;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (dist);
+}
+
 int		enemy_distance(t_map map, t_piece piece, int **en_c, int *c)
 {
 	int	n;
-	int i;
-	int j;
 	int	dist;
 	int tmp;
 
@@ -37,21 +61,8 @@ int		enemy_distance(t_map map, t_piece piece, int **en_c, int *c)
 	dist = -1;
 	while (n < en_c[0][0] + 1)
 	{
-		i = 0;
-		while (i < piece.height)
-		{
-			j = 0;
-			while (j < piece.width)
-			{
-				if (PCONTENT == '*' && map.content[c[0] + i][c[1] + j] == '.')
-				{
-					tmp = distance(en_c[n][0], en_c[n][1], c[0], c[1]);
-					dist = tmp < dist || dist == -1 ? tmp : dist;
-				}
-				j++;
-			}
-			i++;
-		}
+		if ((tmp = coor_distance(map, piece, en_c[n], c)) || dist == -1)
+			dist = tmp;
 		n++;
 	}
 	return (dist);
