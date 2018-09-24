@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/09/24 15:16:26 by carmenia         ###   ########.fr        #
+#    Updated: 2018/09/24 15:18:03 by carmenia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,6 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = vduong.filler
 
-INCLUDES = ./includes/filler.h\
-		   ./includes/get_next_line.h\
-		   ./libft/includes/libft.h\
 
 LIBFT = visualisateur/libft/libft.a
 
@@ -44,7 +41,9 @@ OBJ = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(INCLUDES) $(SRC) $(LIBFT)
-	@$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
+	$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
+$(NAME) : $(SRC) $(LIBFT)
+	$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
 
 $(LIBFT) :
 	@make -C visualisateur
