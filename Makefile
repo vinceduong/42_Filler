@@ -14,7 +14,7 @@
 
 CC = gcc
 
-FLAGS = 
+FLAGS = -Wall -Wextra -Werror
 
 NAME = vduong.filler
 

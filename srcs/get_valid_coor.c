@@ -64,6 +64,7 @@ int		count_placable_coor(t_map map, t_piece piece, char symbol)
 		}
 		i++;
 	}
+	free(coor);
 	return (count);
 }
 

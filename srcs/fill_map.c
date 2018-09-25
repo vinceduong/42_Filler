@@ -15,18 +15,17 @@
 int		get_map_size(t_map *map)
 {
 	char	*line;
-	int		i;
+	char	*cpy;
 
-	i = 0;
 	if (get_next_line(0, &line) < 0)
-		return (1);
-	while (!(ft_isdigit(line[i])))
-		i++;
-	map->height = ft_atoi(&line[i]);
-	while (ft_isdigit(line[i]))
-		i++;
-	map->width = ft_atoi(&line[i]);
-	return (0);
+		return (0);
+	cpy = line;
+	while (!(ft_isdigit(*line)))
+		line++;
+	map->height = ft_atoi(line);
+	map->width = ft_atoi(line);
+	//ft_bzero(cpy);
+	return (1);
 }
 
 int		get_map_content(t_map *map)
@@ -36,25 +35,25 @@ int		get_map_content(t_map *map)
 
 	i = 0;
 	if (get_next_line(0, &line) < 0)
-		return (1);
+		return (0);
 	while (i < map->height)
 	{
 		if (get_next_line(0, &line) <= 0)
-			return (1);
-		ft_strcpy(map->content[i], line + 4);
+			return (0);
+		map->content[i] = ft_strdup(line + 4);
 		free(line);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int		fill_map(t_map *map)
 {
-	if (get_map_size(map))
-		return (1);
+	if (!get_map_size(map))
+		return (0);
 	if (!(map->content = init_map(map->height, map->width)))
-		return (1);
-	if (get_map_content(map))
-		return (1);
-	return (0);
+		return (0);
+	if (!get_map_content(map))
+		return (0);
+	return (1);
 }

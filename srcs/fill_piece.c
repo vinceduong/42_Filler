@@ -12,8 +12,14 @@
 
 #include "filler.h"
 
-void	fill_metadata(t_piece *piece, char *line)
+int		fill_metadata(t_piece *piece)
 {
+	char	*tmp;
+	char	*line;
+
+	if (get_next_line(0, &line) < 0)
+		return (0);
+	tmp = line;
 	while (!ft_isdigit(*line))
 		line++;
 	piece->height = ft_atoi(line);
@@ -21,6 +27,8 @@ void	fill_metadata(t_piece *piece, char *line)
 		line++;
 	line++;
 	piece->width = ft_atoi(line);
+	free(tmp);
+	return (1);
 }
 
 int		fill_piece(t_piece *piece)
@@ -28,20 +36,18 @@ int		fill_piece(t_piece *piece)
 	char	*line;
 	int		i;
 
-	get_next_line(0, &line);
-	free(line);
-	fill_metadata(piece, line);
-	free(line);
+	if (!(fill_metadata(piece)))
+		return (0);
 	if (!(piece->content = init_map(piece->height, piece->width)))
-		return (1);
+		return (0);
 	i = 0;
 	while (i < piece->height)
 	{
 		if (get_next_line(0, &line) <= 0)
-			return (1);
-		ft_strcpy(piece->content[i], line);
+			return (0);
+		piece->content[i] = ft_strdup(line);
 		free(line);
 		i++;
 	}
-	return (0);
+	return (1);
 }

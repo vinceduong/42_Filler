@@ -19,12 +19,13 @@ void	free_map(t_map *map)
 	i = 0;
 	if (map)
 	{
-		while (i < map->height)
+		while (i <= map->height)
 		{
 			free(map->content[i]);
 			i++;
 		}
 		free(map->content);
+		ft_bzero(map, sizeof(t_map));
 	}
 }
 
@@ -35,34 +36,20 @@ void	free_piece(t_piece *piece)
 	i = 0;
 	if (piece)
 	{
-		while (i < piece->height)
+		while (i <= piece->height)
 		{
 			free(piece->content[i]);
 			i++;
 		}
 		free(piece->content);
-	}
-}
-
-void	free_coor(int **coor)
-{
-	int i;
-	int n;
-
-	i = 1;
-	n = coor[0][0];
-	if (coor)
-	{
-		while (i < n)
-		{
-			free(coor[i]);
-		}
-		free(coor);
+		ft_bzero(piece, sizeof(t_piece));
 	}
 }
 
 void	free_all(t_map *map, t_piece *piece)
 {
-	free_map(map);
-	free_piece(piece);
+	if (map)
+		free_map(map);
+	if (piece)
+		free_piece(piece);
 }
