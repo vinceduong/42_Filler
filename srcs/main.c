@@ -26,7 +26,7 @@ int					main(void)
 	t_map			map;
 	t_piece		piece;
 	char			*line;
-	int				*coor;
+	int				**coor;
 
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
 			!ft_strncmp(line, "$$$ exec p", 9) &&
@@ -40,12 +40,13 @@ int					main(void)
 			break ;
 		if ((coor = sorted_coor(map, piece, player.symbol)))
 		{
-			print_coor(coor[0], coor[1]);
-			free(coor);
+			print_coor(coor[1][0], coor[1][1]);
+			free_coor(coor);
 		}
 		else
 			print_coor(0, 0);
 		free_all(&map, &piece);
 	}
+	//while (1);
 	return (0);
 }

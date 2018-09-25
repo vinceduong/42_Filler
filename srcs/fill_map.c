@@ -20,7 +20,7 @@ int		get_map_size(t_map *map)
 
 	i = 0;
 	if(get_next_line(0, &line) < 0)
-		return (1);
+		return (0);
 	cpy = line;
 	while (!(ft_isdigit(line[i])))
 		i++;

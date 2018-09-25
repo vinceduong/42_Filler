@@ -53,3 +53,21 @@ void	free_all(t_map *map, t_piece *piece)
 	if (piece)
 		free_piece(piece);
 }
+
+void	free_coor(int **coor)
+{
+	int i;
+	int n;
+
+	i = 0;
+	n = coor[0][0];
+	if (coor)
+	{
+		while (i <= n && coor[i])
+		{
+			free(coor[i]);
+			i++;
+		}
+		free(coor);
+	}
+}

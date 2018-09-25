@@ -51,7 +51,8 @@ int				compare_coor(int *c1, int *c2);
 int				**init_coor(int size, int distance);
 int				count_symbol(t_map map, char symbol);
 int				**get_player_coor(t_map map, char symbol);
-int				*sorted_coor(t_map map, t_piece piece, char symbol);
+int				**sorted_coor(t_map map, t_piece piece, char symbol);
 int				enemy_distance(t_map map, t_piece piece, int **en_c, int *c);
+void			free_coor(int **coor);
 
 #endif
