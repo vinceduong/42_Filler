@@ -47,6 +47,6 @@ int					main(void)
 			print_coor(0, 0);
 		free_all(&map, &piece);
 	}
-	//while (1);
+	while (1);
 	return (0);
 }
