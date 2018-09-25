@@ -49,11 +49,7 @@ int	*sort_coor(int **v_coor)
 		else
 			i++;
 	}
-	if (!v_coor[1])
-		return (NULL);
-	tmp[0] = v_coor[1][0];
-	tmp[1] = v_coor[1][1];
-	return (tmp);
+	return (v_coor[1]);
 }
 
 int	*sorted_coor(t_map map, t_piece piece, char symbol)
@@ -74,7 +70,7 @@ int	*sorted_coor(t_map map, t_piece piece, char symbol)
 		i++;
 	}
 	best = sort_coor(v_coor);
-	free_coor(e_coor);
+	//free_coor(e_coor);
 	//free_coor(v_coor);
 	return (best);
 }

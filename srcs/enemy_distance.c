@@ -61,7 +61,7 @@ int		enemy_distance(t_map map, t_piece piece, int **en_c, int *c)
 	dist = -1;
 	while (n < en_c[0][0] + 1)
 	{
-		if ((tmp = coor_distance(map, piece, en_c[n], c)) || dist == -1)
+		if ((tmp = coor_distance(map, piece, en_c[n], c)) < dist || dist == -1)
 			dist = tmp;
 		n++;
 	}
