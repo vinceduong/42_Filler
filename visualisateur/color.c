@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:10:36 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 14:23:26 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:53:36 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:53:40 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "includes/filler_viz.h"
 
 int			choose_board_color(t_envars *e, int row, int col)
 {

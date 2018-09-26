@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/09/24 15:23:57 by carmenia         ###   ########.fr        #
+#    Updated: 2018/09/26 12:16:45 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ all : $(NAME)
 
 $(NAME) : $(INCLUDES) $(SRC) $(LIBFT)
 	@$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
+	@printf "\n\033[032mCompilation Successful\033[0m\n"
+	@printf "\n\033[032mvduong.filler Created\033[0m\n"
 
 $(LIBFT) :
 	@make -C visualisateur

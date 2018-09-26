@@ -6,18 +6,18 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:10:36 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/24 14:55:46 by carmenia         ###   ########.fr       */
+/*   Updated: 2018/09/26 12:12:00 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLER_H
 # define FILLER_H
 
-#include	"libft.h"
-#include	"get_next_line.h"
-#include <stdio.h>
+# include "libft.h"
+# include "get_next_line.h"
+# include <stdio.h>
 
-typedef	struct	 s_piece
+typedef	struct	s_piece
 {
 	int		height;
 	int		width;
@@ -38,7 +38,6 @@ typedef	struct	s_player
 	char	*name;
 	char	symbol;
 }				t_player;
-
 
 int				fill_map(t_map *map);
 int				fill_piece(t_piece *piece);

@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   image.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:25:48 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 12:27:15 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:54:15 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:54:17 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
 #include "includes/filler_viz.h"
 
 void		init_img(t_envars *env)

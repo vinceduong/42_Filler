@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:26:08 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 14:41:46 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:54:24 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:54:25 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <math.h>
 #include <mlx.h>
 #include "includes/filler_viz.h"

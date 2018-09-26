@@ -3,17 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:26:26 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 14:44:30 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:54:32 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:55:44 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
 #include <mlx.h>
 #include "includes/filler_viz.h"
+
+void			print_message(void)
+{
+	ft_printf("\n			Ceci est un visualisateur dans le cadre\
+du projet Filler de 42\n\n\
+		Pour naviguer dans la fenetre, utiliser les commandes suivantes:\n\
+		fleche de gauche: aller en arriere d'un tour\n\
+		fleche de droite: aller en avant d'un tour\n\
+		fleche du haut: avancer de 9 tours\n\
+		fleche du bas: reculer de 9 tours\n\
+		p: Imprimer le plateau courant sur le terminal\n\
+		f: Retour au debut de la partie\n\
+		l: Avancer jusqu'a la fin de la partie\n\
+		esc ou q: Quitter la fenetre\n\n");
+}
 
 void			disp_info(int mode)
 {
@@ -32,17 +46,7 @@ void			disp_info(int mode)
 	}
 	else if (mode == 2)
 	{
-		ft_printf("\n		Ceci est un visualisateur dans le cadre \
-du projet Filler de 42\n\n\
-		Pour naviguer dans la fenetre, utiliser les commandes suivantes:\n\
-		fleche de gauche: aller en arriere d'un tour\n\
-		fleche de droite: aller en avant d'un tour\n\
-		fleche du haut: avancer de 9 tours\n\
-		fleche du bas: reculer de 9 tours\n\
-		p: Imprimer le plateau courant sur le terminal\n\
-		f: Retour au debut de la partie\n\
-		l: Avancer jusqu'a la fin de la partie\n\
-		esc ou q: Quitter la fenetre\n\n");
+		print_message();
 	}
 }
 

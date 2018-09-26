@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:27:04 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 12:27:15 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:56:45 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:56:46 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <mlx.h>
 #include "includes/filler_viz.h"
 

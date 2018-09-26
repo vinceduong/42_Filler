@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   read_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:26:50 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 12:27:15 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:56:37 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:56:38 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include "includes/filler_viz.h"

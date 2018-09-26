@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   render_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:27:11 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 12:27:14 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:57:33 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:57:34 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <mlx.h>
 #include "includes/filler_viz.h"
 
@@ -20,7 +19,7 @@ void	render_scoreboard(t_envars *e, t_gslst *gs)
 	char	*p1;
 	char	*p2;
 
-	end = (ft_strlen(e->g->p1) > ft_strlen(e->g->p2)) ? 
+	end = (ft_strlen(e->g->p1) > ft_strlen(e->g->p2)) ?
 		(ft_strlen(e->g->p1) + 1) * e->b_glen :
 		(ft_strlen(e->g->p2) + 1) * e->b_glen;
 	p1 = ft_itoa(gs->p1_pts);

@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   game_state_list_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carmenia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/24 12:11:04 by carmenia          #+#    #+#             */
-/*   Updated: 2018/09/24 14:24:22 by carmenia         ###   ########.fr       */
+/*   Created: 2018/09/26 12:53:58 by vduong            #+#    #+#             */
+/*   Updated: 2018/09/26 12:53:59 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "includes/filler_viz.h"
 
 t_gslst	*gs_lstnew(t_game *game, int turn_switch)
