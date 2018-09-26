@@ -54,7 +54,7 @@ int		fill_map(t_map *map)
 {
 	if (!get_map_size(map))
 		return (0);
-	if (!(map->content = init_map(map->height, map->width)))
+	if (!(map->content = init_map(map->height)))
 		return (0);
 	if (!get_map_content(map))
 		return (0);

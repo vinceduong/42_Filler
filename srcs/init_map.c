@@ -12,20 +12,12 @@
 
 #include "../includes/filler.h"
 
-char	**init_map(int height, int width)
+char	**init_map(int height)
 {
-	int		i;
 	char	**map;
 
 	if (!(map = (char **)(malloc(sizeof(char*) * (height + 1)))))
 		return (NULL);
 	map[height] = NULL;
-	i = 0;
-	while (i < height)
-	{
-		if (!(map[i] = ft_strnew(width)))
-			return (NULL);
-		i++;
-	}
 	return (map);
 }

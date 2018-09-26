@@ -20,16 +20,23 @@ void				print_coor(int c1, int c2)
 	ft_putchar('\n');
 }
 
-int					check_player(t_player *player)
+char					check_player()
 {
 	char *line;
+	int	i;
+	char symbol;
 
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
 			!ft_strncmp(line, "$$$ exec p", 9) &&
 			(line[10] == '1' || line[10] == '2'))
 	{
-		fill_player(player, line);
-		return (1);
+		i = 0;
+		while (line[i] != 'p')
+			i++;
+		i++;
+		symbol = line[i] == '1' ? 'O' : 'X';
+		free(line);
+		return (symbol);
 	}
 	else
 		return (0);
@@ -37,22 +44,20 @@ int					check_player(t_player *player)
 
 int					main(void)
 {
-	t_player		player;
+	t_piece		piece;
 	t_map			map;
-	t_piece			piece;
+	char			symbol;
 	int				**coor;
 
-	if (!(check_player(&player)))
+	if (!(symbol = check_player()))
 		return (0);
-	ft_bzero(&piece, sizeof(t_piece));
-	ft_bzero(&map, sizeof(t_map));
 	while (1)
 	{
 		if (!fill_map(&map))
 			break ;
 		if (!fill_piece(&piece))
 			break ;
-		if ((coor = sorted_coor(map, piece, player.symbol)))
+		if ((coor = sorted_coor(map, piece, symbol)))
 		{
 			print_coor(coor[1][0], coor[1][1]);
 			free_coor(coor);

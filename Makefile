@@ -28,7 +28,6 @@ SRC = srcs/main.c\
 	  srcs/get_next_line.c\
 	  srcs/fill_map.c\
 	  srcs/fill_piece.c\
-	  srcs/fill_player.c\
 	  srcs/init_map.c\
 	  srcs/init_coor.c\
 	  srcs/get_player_coor.c\
@@ -45,11 +44,10 @@ all : $(NAME)
 
 allclean : all clean
 
-$(NAME) : $(LIBFT) $(SRC) $(LIBFT) $(VIZ)
+$(NAME) : $(LIBFT) $(SRC) $(LIBFT)
 	@$(CC) $(FLAGS) $(INCLUDES) $(SRC) $(LIBFT) -o $(NAME)
 	@printf "\n\033[032mFiller Compilation Successful\033[0m\n"
-	@printf "\n\033[032mvduong.filler Created\033[0m"
-	@printf "\n\033[032mfiller_viz Created\033[0m\n"
+	@printf "\n\033[032mPlayer \"vduong.filler\" Created\033[0m\n"
 
 $(LIBFT) :
 	@make -C libft
@@ -66,5 +64,6 @@ fclean :
 	@make fclean -C visualisateur
 	@make clean -C libft
 	@rm -f $(NAME) filler_viz
+	@printf "\n\033[032mPlayer \"vduong.filler\" Deleted\033[0m\n"
 
 re : fclean all

@@ -17,11 +17,12 @@ int		**init_coor(int nb, int distance)
 	int	**coor;
 	int	i;
 
-	if (!(coor = (int **)malloc(sizeof(int *) * (nb + 2))))
+	if (!nb)
+		return (NULL);
+	if (!(coor = (int **)malloc(sizeof(int *) * (nb + 1))))
 		return (NULL);
 	coor[0] = (int *)malloc(sizeof(int *));
 	coor[0][0] = nb;
-	coor[nb + 1] = NULL;
 	if (nb >= 1)
 	{
 		i = 1;

@@ -34,6 +34,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
 	@gcc $(CFLAGS) -I$(INCLUDES) $(OBJ) -o $(NAME) libft/libft.a /usr/local/lib/libmlx.a -framework OpenGL -framework AppKit
+	@printf "\n\033[032mfiller_viz Created\033[0m\n"
 
 %.o: %.c
 	@printf "\r\033[31mgcc -c -Wall -Wextra -Werror -o $@ $^                    \033[0m"

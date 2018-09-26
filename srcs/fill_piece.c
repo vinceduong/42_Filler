@@ -39,7 +39,7 @@ int		fill_piece(t_piece *piece)
 
 	if (!(fill_metadata(piece)))
 		return (0);
-	if (!(piece->content = init_map(piece->height, piece->width)))
+	if (!(piece->content = init_map(piece->height)))
 		return (0);
 	i = 0;
 	while (i < piece->height)
