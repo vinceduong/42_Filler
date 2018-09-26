@@ -6,7 +6,7 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/20 18:51:58 by vduong            #+#    #+#              #
-#    Updated: 2018/09/26 12:16:45 by vduong           ###   ########.fr        #
+#    Updated: 2018/09/26 13:27:54 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = vduong.filler
 
-LIBFT = visualisateur/libft/libft.a
+VIZ = filler_viz
+
+LIBFT = libft/libft.a
 
 SRC = srcs/main.c\
 	  srcs/get_next_line.c\
@@ -39,20 +41,26 @@ OBJ = $(SRCS:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(INCLUDES) $(SRC) $(LIBFT)
-	@$(CC) $(FLAGS) -I libft/includes -I includes/ $(SRC) $(LIBFT) -o $(NAME)
-	@printf "\n\033[032mCompilation Successful\033[0m\n"
-	@printf "\n\033[032mvduong.filler Created\033[0m\n"
+$(NAME) : $(LIBFT) $(SRC) $(LIBFT) $(VIZ)
+	@$(CC) $(FLAGS) -I./libft/includes/ -I./includes/ $(SRC) $(LIBFT) -o $(NAME)
+	@printf "\n\033[032mFiller Compilation Successful\033[0m\n"
+	@printf "\n\033[032mvduong.filler Created\033[0m"
+	@printf "\n\033[032mfiller_viz Created\033[0m\n"
 
 $(LIBFT) :
+	@make -C libft
+
+$(VIZ) :
 	@make -C visualisateur
 
 clean :
 	@make clean -C visualisateur
+	@make clean -C libft
 	@rm -f $(OBJ)
 
 fclean :
 	@make fclean -C visualisateur
-	@rm -f $(NAME)
+	@make clean -C libft
+	@rm -f $(NAME) filler_viz
 
 re : fclean all

@@ -6,10 +6,11 @@
 #    By: vduong <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/26 12:55:52 by vduong            #+#    #+#              #
-#    Updated: 2018/09/26 12:55:53 by vduong           ###   ########.fr        #
+#    Updated: 2018/09/26 13:41:04 by vduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = ../filler_viz
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -27,18 +28,19 @@ SRC = main.c\
 
 OBJ = $(SRC:.c=.o)
 
+LIBFT = libft/libft.a
+
 all: $(NAME)
 
-$(NAME): $(OBJ) libft/*.c libft/Makefile
-	@printf "\n\033[32m make libft \033[0m"
-	@make -C libft
-	@cp libft/libft.a ./$(NAME)
+$(NAME): $(OBJ) $(LIBFT)
 	@gcc $(CFLAGS) -I$(INCLUDES) $(OBJ) -o $(NAME) libft/libft.a /usr/local/lib/libmlx.a -framework OpenGL -framework AppKit
-	@mv $(NAME) ..
 
 %.o: %.c
 	@printf "\r\033[31mgcc -c -Wall -Wextra -Werror -o $@ $^                    \033[0m"
 	@gcc -c -Wall -Wextra -Werror -o $@ $^
+
+$(LIBFT):
+	@make -C libft
 
 clean:
 	@cd libft ; make clean ; cd ..

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
 #include "includes/filler_viz.h"
 
 void	draw_rect(t_envars *env, int row, int col, int color)

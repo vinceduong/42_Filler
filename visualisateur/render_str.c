@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
 #include "includes/filler_viz.h"
 
 void	render_scoreboard(t_envars *e, t_gslst *gs)

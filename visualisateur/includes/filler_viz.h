@@ -14,6 +14,9 @@
 # define FILLER_VIZ_H
 # include <stddef.h>
 # include "../libft/libft.h"
+# include <mlx.h>
+# include <fcntl.h>
+# include <stdlib.h>
 # define TURN_SWITCH	1
 # define PLACED			2
 # define P1_PLACED		4

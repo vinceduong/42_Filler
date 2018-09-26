@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <mlx.h>
 #include "includes/filler_viz.h"
 
 void			print_message(void)

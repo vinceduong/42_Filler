@@ -89,16 +89,16 @@ SRC = ./ft_atoi.c\
 OBJ = $(SRC:.c=.o)
 
 $(NAME):
-	$(CC) -c $(FLAGS) $(SRC) -I./includes
-	ar r $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@$(CC) -c $(FLAGS) $(SRC) -I./includes
+	@ar r $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 all : $(NAME)
 
 clean :
-	/bin/rm -rf $(OBJ)
+	@/bin/rm -rf $(OBJ)
 
 fclean :clean
-	/bin/rm -rf $(NAME)
+	@/bin/rm -rf $(NAME)
 
 re:fclean all

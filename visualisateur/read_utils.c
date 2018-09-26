@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <fcntl.h>
 #include "includes/filler_viz.h"
 #define IS_P1(x) ((x)=='O'||(x)=='o')
 #define IS_P2(y) ((y)=='X'||(y)=='x')

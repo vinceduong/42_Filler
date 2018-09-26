@@ -17,7 +17,7 @@ int		get_map_size(t_map *map)
 	char	*line;
 	char	*tmp;
 
-	if (get_next_line(0, &line) < 0)
+	if (get_next_line(0, &line) <= 0)
 		return (0);
 	tmp = line;
 	while (!(ft_isdigit(*line)))
@@ -26,6 +26,7 @@ int		get_map_size(t_map *map)
 	while (ft_isdigit(*line))
 		line++;
 	map->width = ft_atoi(line);
+	free(tmp);
 	return (1);
 }
 

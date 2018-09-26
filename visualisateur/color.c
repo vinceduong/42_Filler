@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "includes/filler_viz.h"
+
 int			choose_board_color(t_envars *e, int row, int col)
 {
 	t_game	*g;
