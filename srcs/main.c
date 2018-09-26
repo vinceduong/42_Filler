@@ -29,7 +29,6 @@ int					check_player(t_player *player)
 			(line[10] == '1' || line[10] == '2'))
 	{
 		fill_player(player, line);
-		free(line);
 		return (1);
 	}
 	else
@@ -45,6 +44,8 @@ int					main(void)
 
 	if (!(check_player(&player)))
 		return (0);
+	ft_bzero(&piece, sizeof(t_piece));
+	ft_bzero(&map, sizeof(t_map));
 	while (1)
 	{
 		if (!fill_map(&map))

@@ -15,7 +15,9 @@
 int	fill_player(t_player *player, char *firstline)
 {
 	int i;
+	char *tmp;
 
+	tmp = firstline;
 	while (*firstline != 'p')
 		firstline++;
 	firstline++;
@@ -31,5 +33,6 @@ int	fill_player(t_player *player, char *firstline)
 		player->name[i] = firstline[i];
 		i++;
 	}
+	free(tmp);
 	return (0);
 }

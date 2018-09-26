@@ -22,6 +22,8 @@ VIZ = filler_viz
 
 LIBFT = libft/libft.a
 
+INCLUDES = -I./libft/includes/ -I./includes/
+
 SRC = srcs/main.c\
 	  srcs/get_next_line.c\
 	  srcs/fill_map.c\
@@ -41,8 +43,10 @@ OBJ = $(SRCS:.c=.o)
 
 all : $(NAME)
 
+allclean : all clean
+
 $(NAME) : $(LIBFT) $(SRC) $(LIBFT) $(VIZ)
-	@$(CC) $(FLAGS) -I./libft/includes/ -I./includes/ $(SRC) $(LIBFT) -o $(NAME)
+	@$(CC) $(FLAGS) $(INCLUDES) $(SRC) $(LIBFT) -o $(NAME)
 	@printf "\n\033[032mFiller Compilation Successful\033[0m\n"
 	@printf "\n\033[032mvduong.filler Created\033[0m"
 	@printf "\n\033[032mfiller_viz Created\033[0m\n"

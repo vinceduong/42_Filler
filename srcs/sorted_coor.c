@@ -30,6 +30,7 @@ int	**sort_coor(int **v_coor)
 		else
 			i++;
 	}
+	//free(tmp);
 	return (v_coor);
 }
 

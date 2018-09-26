@@ -38,6 +38,7 @@ int		get_map_content(t_map *map)
 	i = 0;
 	if (get_next_line(0, &line) < 0)
 		return (0);
+	free(line);
 	while (i < map->height)
 	{
 		if (get_next_line(0, &line) <= 0)

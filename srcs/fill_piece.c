@@ -14,18 +14,20 @@
 
 int		fill_metadata(t_piece *piece)
 {
-	char	*tmp;
 	char	*line;
+	char	*tmp;
+	int		i;
 
 	if (get_next_line(0, &line) < 0)
 		return (0);
 	tmp = line;
-	while (!ft_isdigit(*line))
-		line++;
-	piece->height = ft_atoi(line);
-	while (ft_isdigit(*line))
-		line++;
-	piece->width = ft_atoi(line);
+	i = 0;
+	while (!ft_isdigit(line[i]))
+		i++;
+	piece->height = ft_atoi(&line[i]);
+	while (ft_isdigit(line[i]))
+		i++;
+	piece->width = ft_atoi(&line[i]);
 	free(tmp);
 	return (1);
 }
