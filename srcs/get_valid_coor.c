@@ -94,6 +94,7 @@ int		**fill_valid_coor(t_map map, t_piece piece, char symbol, int **vc)
 			j++;
 		}
 	}
+	free(c);
 	return (vc);
 }
 
@@ -103,5 +104,5 @@ int		**get_valid_coor(t_map map, t_piece piece, char symbol)
 
 	if (!(coor = init_coor(count_placable_coor(map, piece, symbol), 1)))
 		return (NULL);
-	return (coor = fill_valid_coor(map, piece, symbol, coor));
+	return (fill_valid_coor(map, piece, symbol, coor));
 }

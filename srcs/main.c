@@ -20,18 +20,30 @@ void				print_coor(int c1, int c2)
 	ft_putchar('\n');
 }
 
+int					check_player(t_player *player, char *line)
+{
+	if (ft_get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
+			!ft_strncmp(line, "$$$ exec p", 9) &&
+			(line[10] == '1' || line[10] == '2'))
+	{
+		fill_player(player, line);
+		free(line);
+		return (1);
+	}
+	else
+		return (0);
+}
+
 int					main(void)
 {
-	t_player	player;
+	t_player		player;
 	t_map			map;
-	t_piece		piece;
+	t_piece			piece;
 	char			*line;
 	int				**coor;
 
-	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
-			!ft_strncmp(line, "$$$ exec p", 9) &&
-			(line[10] == '1' || line[10] == '2'))
-		fill_player(&player, line);
+	if (!(check_player(&player, line)))
+		return (0);
 	while (1)
 	{
 		if (!fill_map(&map))

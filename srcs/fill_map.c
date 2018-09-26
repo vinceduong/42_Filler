@@ -28,8 +28,8 @@ int		get_map_size(t_map *map)
 	while (ft_isdigit(line[i]))
 		i++;
 	map->width = ft_atoi(&line[i]);
-	if (line)
-		free(line);
+	/*if (line)
+		free(line);*/
 	return (1);
 }
 
