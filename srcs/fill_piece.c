@@ -25,7 +25,6 @@ int		fill_metadata(t_piece *piece)
 	piece->height = ft_atoi(line);
 	while (ft_isdigit(*line))
 		line++;
-	line++;
 	piece->width = ft_atoi(line);
 	free(tmp);
 	return (1);

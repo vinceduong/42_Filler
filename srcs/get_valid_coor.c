@@ -49,20 +49,18 @@ int		count_placable_coor(t_map map, t_piece piece, char symbol)
 	int		count;
 	int		*coor;
 
-	i = 0;
+	i = -1;
 	count = 0;
 	coor = (int *)malloc(2 * sizeof(int));
-	while (i < map.height)
+	while (i++ < map.height)
 	{
-		j = 0;
-		while (j < map.width)
+		j = -1;
+		while (j++ < map.width)
 		{
 			coor[0] = i;
 			coor[1] = j;
 			count += is_placable(map, piece, symbol, coor);
-			j++;
 		}
-		i++;
 	}
 	free(coor);
 	return (count);
@@ -80,8 +78,8 @@ int		**fill_valid_coor(t_map map, t_piece piece, char symbol, int **vc)
 	c = (int *)malloc(2 * sizeof(int));
 	while (i++ < map.height)
 	{
-		j = 0;
-		while (j < map.width)
+		j = -1;
+		while (j++ < map.width)
 		{
 			c[0] = i;
 			c[1] = j;
@@ -91,7 +89,6 @@ int		**fill_valid_coor(t_map map, t_piece piece, char symbol, int **vc)
 				vc[nb][1] = j;
 				nb++;
 			}
-			j++;
 		}
 	}
 	free(c);

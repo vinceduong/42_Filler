@@ -12,8 +12,6 @@
 
 #include "filler.h"
 
-
-
 int	**sort_coor(int **v_coor)
 {
 	int i;

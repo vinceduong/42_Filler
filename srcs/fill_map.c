@@ -15,21 +15,17 @@
 int		get_map_size(t_map *map)
 {
 	char	*line;
-	char	*cpy;
-	int 	i;
+	char	*tmp;
 
-	i = 0;
-	if(get_next_line(0, &line) < 0)
+	if (get_next_line(0, &line) < 0)
 		return (0);
-	cpy = line;
-	while (!(ft_isdigit(line[i])))
-		i++;
-	map->height = ft_atoi(&line[i]);
-	while (ft_isdigit(line[i]))
-		i++;
-	map->width = ft_atoi(&line[i]);
-	/*if (line)
-		free(line);*/
+	tmp = line;
+	while (!(ft_isdigit(*line)))
+		line++;
+	map->height = ft_atoi(line);
+	while (ft_isdigit(*line))
+		line++;
+	map->width = ft_atoi(line);
 	return (1);
 }
 
