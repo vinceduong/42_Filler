@@ -6,7 +6,7 @@
 /*   By: vduong <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:22:25 by vduong            #+#    #+#             */
-/*   Updated: 2018/09/17 16:28:36 by vduong           ###   ########.fr       */
+/*   Updated: 2018/09/27 13:09:41 by vduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void				print_coor(int c1, int c2)
 	ft_putchar('\n');
 }
 
-char					check_player()
+char				check_player(void)
 {
-	char *line;
-	int	i;
-	char symbol;
+	char	*line;
+	int		i;
+	char	symbol;
 
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
 			!ft_strncmp(line, "$$$ exec p", 9) &&
@@ -45,9 +45,9 @@ char					check_player()
 int					main(void)
 {
 	t_piece		piece;
-	t_map			map;
-	char			symbol;
-	int				**coor;
+	t_map		map;
+	char		symbol;
+	int			**coor;
 
 	if (!(symbol = check_player()))
 		return (0);
