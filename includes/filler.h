@@ -22,6 +22,8 @@ typedef	struct	s_piece
 	int		height;
 	int		width;
 	char	**content;
+	int		h_index;
+	int		w_index;
 	int		enemy_distance;
 }				t_piece;
 

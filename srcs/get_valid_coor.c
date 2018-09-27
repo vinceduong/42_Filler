@@ -29,7 +29,8 @@ int		is_placable(t_map map, t_piece piece, char symbol, int *coor)
 		while (x < piece.width)
 		{
 			if (PCONTENT == '*' &&
-				((coor[0] + y >= map.height) || coor[1] + x >= map.width))
+				(coor[0] + y >= map.height || coor[1] + x >= map.width ||
+				coor[0] + y < 0 || coor[1] + x < 0))
 				return (0);
 			if (PCONTENT == '*' && MCONTENT == symbol)
 				nbover++;
@@ -49,12 +50,12 @@ int		count_placable_coor(t_map map, t_piece piece, char symbol)
 	int		count;
 	int		*coor;
 
-	i = -1;
+	i = -1 - piece.h_index;
 	count = 0;
 	coor = (int *)malloc(2 * sizeof(int));
 	while (i++ < map.height)
 	{
-		j = -1;
+		j = -1 - piece.w_index;
 		while (j++ < map.width)
 		{
 			coor[0] = i;
@@ -74,11 +75,11 @@ int		**fill_valid_coor(t_map map, t_piece piece, char symbol, int **vc)
 	int		*c;
 
 	nb = 1;
-	i = -1;
+	i = -1 - piece.h_index;
 	c = (int *)malloc(2 * sizeof(int));
 	while (i++ < map.height)
 	{
-		j = -1;
+		j = -1 - piece.w_index;
 		while (j++ < map.width)
 		{
 			c[0] = i;

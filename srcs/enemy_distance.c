@@ -41,7 +41,7 @@ int		coor_distance(t_map map, t_piece piece, int *en_c, int *c)
 		{
 			if (PCONTENT == '*' && map.content[c[0] + i][c[1] + j] == '.')
 			{
-				tmp = distance(en_c[0], en_c[1], c[0], c[1]);
+				tmp = distance(en_c[0], en_c[1], c[0] + i, c[1] + j);
 				dist = tmp < dist || dist == -1 ? tmp : dist;
 			}
 			j++;
