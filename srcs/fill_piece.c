@@ -32,24 +32,6 @@ int		fill_metadata(t_piece *piece)
 	return (1);
 }
 
-int		fill_index(t_piece *piece)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < piece.height)
-	{
-		j = 0;
-		while (j < piece.width)
-		{
-			if (piece.content[i][j] == '*')
-			{
-				
-			}
-		}
-	}
-}
 int		fill_piece(t_piece *piece)
 {
 	char	*line;
@@ -68,6 +50,5 @@ int		fill_piece(t_piece *piece)
 		free(line);
 		i++;
 	}
-
 	return (1);
 }
