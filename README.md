@@ -14,7 +14,7 @@ The first player who cannot place his piece loses.
 vduong.filler is the player i created, his strategy consists of going the closest possible to the enemy and surround him.
 
 For each turn, my player will list the possibles coordonates i can use for my piece placement, then he will assign them the distance to the enemy  and sort them.
-The coordonates whith the closest distance to the enemy will be printed of the standard input.
+The coordonate whith the closest distance to the enemy will be printed of the standard input.
 
 #### Compile the player
 ```
